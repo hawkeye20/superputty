@@ -898,6 +898,7 @@ namespace SuperPutty
         OpenSession,
         SwitchSession,
         DuplicateSession,
+        RestartSession,
         GotoCommandBar,
         GotoConnectionBar,
         FocusActiveSession,

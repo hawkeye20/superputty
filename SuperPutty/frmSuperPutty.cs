@@ -1595,6 +1595,15 @@ namespace SuperPutty
                     if (activePanel != null && activePanel.Session != null)
                         SuperPuTTY.OpenProtoSession(activePanel.Session);
                     break;
+                case SuperPuttyAction.RestartSession:
+                    if (activePanel != null && activePanel.Session != null)
+                    {
+                        //command value from ctPuttyPanel.cs
+                        uint Restartcommand = 0x0040;
+                        NativeMethods.SendMessage(activePanel.AppPanel.AppWindowHandle, (uint)NativeMethods.WM.SYSCOMMAND, Restartcommand, 0);
+
+                    }
+                        break;
                 case SuperPuttyAction.GotoCommandBar:
                     if (!this.fullscreenViewState.IsFullScreen)
                     {
